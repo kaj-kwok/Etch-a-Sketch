@@ -30,7 +30,11 @@ clearButton.addEventListener('click', function() {
     for (let i = 0; i < squares.length; i++) { 
         squares[i].classList.remove('--filled'); // need to loop to remove the class --filled from each div
     };
-   let size = prompt("Grid size", 16);
-   createGrid(size, size);
+   let size = prompt("Grid size", 10);{
+    createGrid(size, size);
+    if (size > 50)
+    size = 50;
+   }
+   
 });
 
