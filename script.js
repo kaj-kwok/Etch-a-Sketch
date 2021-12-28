@@ -4,7 +4,7 @@ const clearButton = document.querySelector("#clearButton");
 
 //create grid
 function createGrid(rows, columns){
-    container.innerHTML = "";
+    container.innerHTML = ""; // clear grid
     for (let i = 0; i < rows; i++) {
         for (let c = 0; c < columns; c++) { // loop rows by columns for a 16x16 grid
             let gridSquare = document.createElement("div");
@@ -30,10 +30,19 @@ clearButton.addEventListener('click', function() {
     for (let i = 0; i < squares.length; i++) { 
         squares[i].classList.remove('--filled'); // need to loop to remove the class --filled from each div
     };
-   let size = prompt("Grid size", 10);{
+   let size = prompt("Grid size", 10); {
+    if (size === ""){   // if input is null
+    size = 10;
     createGrid(size, size);
-    if (size > 50)
+    }
+    if (size > 50) {
     size = 50;
+    createGrid(size, size);
+}
+    else {
+        size = 10;
+        createGrid(size, size);
+    }
    }
    
 });
