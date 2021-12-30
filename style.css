@@ -2,6 +2,11 @@ h1 {
     text-align: center;
 }
 
+#panel {
+    display: flex;
+    /* justify-content: space-around; */
+}
+
 #wrapper-grid {
     width: 650px;
     height: 650px;
@@ -14,10 +19,6 @@ h1 {
 #randomColorBtn {
     width:96px;
     height: 73px;
-    position: absolute;
-    top: 300px;
-    right: 100px;
-    /* border-radius: 50%; */
     border: none;
     margin: .4rem;
     padding: 1px 2px;
@@ -26,13 +27,33 @@ h1 {
 #colorButton {
     width:100px;
     height: 75px;
-    position: absolute;
-    top: 225px;
-    right: 100px;
-    /* border-radius: 50%; */
+    border-radius: 50%;
     border: none;
     margin: .4rem;
 }
+
+#shadedButton {
+    width:100px;
+    height: 75px;
+    border: none;
+    margin: .4rem;
+    opacity: .2;
+}
+
+#colorSelectors {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    margin-right: 50px;
+}
+
+#control {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    margin-left: 50px;
+} 
 
 #clearButton {
     font-size: large;
@@ -43,11 +64,13 @@ h1 {
     border: none;
     color: white;
     padding: 20px;
-    position: absolute;
+    /* position: absolute;
     top: 300px;
-    left: 50px;
-    width: 111px;
+    left: 50px; */
+    width: 150px;
+    height: 75px;
 }
+
 #eraseAll {
     font-size: large;
     background-color: #04AA6D;
@@ -57,9 +80,11 @@ h1 {
     border: none;
     color: white;
     padding: 20px;
-    position: absolute;
+    width: 150px;
+    height: 75px;
+    /* position: absolute;
     top: 400px;
-    left: 50px;
+    left: 50px; */
 }
 
 #clearButton:hover {
@@ -68,7 +93,18 @@ h1 {
     opacity: 1;
 }
 
+#eraseAll:hover {
+    background-color: #3e8e41;
+    transform:scale(1.1);
+    opacity: 1;
+}
+
 #clearButton:active {
+    background-color: #3e8e41;
+    box-shadow: 0 3px #666;
+    transform: translateY(2px);
+}
+#eraseAll:active {
     background-color: #3e8e41;
     box-shadow: 0 3px #666;
     transform: translateY(2px);
@@ -85,7 +121,11 @@ h1 {
 }
 
 .--squares {
-    /* padding: 10px; */
+    /* padding: 10px;
     /* flex: 0 0  60px; */
     outline: 1px solid #000;
+}
+
+.--shadeIn {
+    opacity: 0.1;
 }

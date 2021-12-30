@@ -4,6 +4,8 @@ const eraseAll = document.querySelector("#eraseAll");
 var colorInput = document.querySelector("#colorButton");
 const randomColorBtn = document.querySelector("#randomColorBtn");
 const colorButtons = document.querySelector("#colorSelectors");
+const shadedBtn = document.querySelector("#shadedButton");
+const value = document.querySelector("#value");
 
 //create grid
 function createGrid(rows, columns){
@@ -15,20 +17,16 @@ function createGrid(rows, columns){
             container.appendChild(gridSquare).classList.add("--squares");
              container.style.gridTemplateColumns = 'repeat('+rows+', 1fr)';
              container.style.gridTemplateRows = 'repeat('+rows+', 1fr)';
-             gridSquare.addEventListener('mouseover', function(event){
-                event.target.style.backgroundColor = 'red';
-                    
-        })
+             
+        //      gridSquare.addEventListener('mouseover', function(event){
+        //         event.target.style.backgroundColor = 'red';
+            
+        // })
     }
-}
+} value.innerHTML = ` \(${rows}x${rows}\)`;
 }
 
 createGrid(10, 10);
-
-// function setColor() {
-    
-// )}
-
 
 
 //on click random color picker
@@ -43,7 +41,7 @@ randomColorBtn.addEventListener('click', () => {
    }
 })
 
-//shade in color
+// color selector
 colorInput.addEventListener('click', () => {
     var squares = document.getElementsByClassName('--squares') // select all div squares
     for (let i = 0; i < squares.length; i++) {
@@ -53,11 +51,17 @@ colorInput.addEventListener('click', () => {
 }
 })
 
-// colorInput.addEventListener('mouseover', function (e) {
-//     if(e.target.classList == '--squares'){
-//             e.target.style.backgroundColor = colorInput.value;
-//         }
-// });
+//shaded selector
+shadedBtn.addEventListener('click', () => {
+    var squares = document.getElementsByClassName('--squares')
+    for (let i = 0; i < squares.length; i++) {
+        squares[i].addEventListener('mouseenter', function(event){
+            let opacity = event.target.style.opacity;
+            event.target.style.opacity = opacity ? (parseFloat(opacity) + 0.1) : 0.2;
+            event.target.style.backgroundColor = shadedBtn.value;
+        })
+    }
+        })
 
 //erase all button
 eraseAll.addEventListener('click', function() {
