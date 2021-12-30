@@ -2,6 +2,38 @@ h1 {
     text-align: center;
 }
 
+#wrapper-grid {
+    width: 650px;
+    height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+#randomColorBtn {
+    width:96px;
+    height: 73px;
+    position: absolute;
+    top: 300px;
+    right: 100px;
+    /* border-radius: 50%; */
+    border: none;
+    margin: .4rem;
+    padding: 1px 2px;
+}
+    
+#colorButton {
+    width:100px;
+    height: 75px;
+    position: absolute;
+    top: 225px;
+    right: 100px;
+    /* border-radius: 50%; */
+    border: none;
+    margin: .4rem;
+}
+
 #clearButton {
     font-size: large;
     background-color: #04AA6D;
@@ -13,6 +45,20 @@ h1 {
     padding: 20px;
     position: absolute;
     top: 300px;
+    left: 50px;
+    width: 111px;
+}
+#eraseAll {
+    font-size: large;
+    background-color: #04AA6D;
+    opacity: 0.6;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    color: white;
+    padding: 20px;
+    position: absolute;
+    top: 400px;
     left: 50px;
 }
 
@@ -29,20 +75,17 @@ h1 {
 }
 
 #container {
-    padding-top: 200px;
-    display: grid;
-    justify-content: center;
+    margin-top: 75px;
+    display: inline-grid;
     margin: auto;
     width: 600px;
     height: 600px;
+    min-height: 0;
+    min-width: 0;
 }
 
 .--squares {
-    padding: 10px;
-    flex: 0 0  60px;
+    /* padding: 10px; */
+    /* flex: 0 0  60px; */
     outline: 1px solid #000;
-}
-
-.--filled {
-    background-color: red;
 }
